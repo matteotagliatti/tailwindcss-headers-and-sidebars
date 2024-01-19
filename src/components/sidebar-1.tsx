@@ -50,7 +50,7 @@ export default function Sidebar1() {
             key={i}
             className={`group flex items-center rounded-md text-sm font-medium transition-colors hover:bg-gray-800`}
           >
-            <div className="flex items-center justify-center p-2">
+            <div className="flex items-center justify-center p-2 hover:bg-gray-800">
               <route.icon className="h-5 w-5" />
             </div>
             <p
