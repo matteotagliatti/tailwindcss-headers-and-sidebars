@@ -1,8 +1,10 @@
 ---
 import Header1 from "../components/header-1.tsx";
+import Header2 from "../components/header-2.tsx";
 import Layout from "../layouts/layout.astro";
 ---
 
 <Layout title="Headers">
+  <Header2 client:load />
   <Header1 client:load />
 </Layout>
