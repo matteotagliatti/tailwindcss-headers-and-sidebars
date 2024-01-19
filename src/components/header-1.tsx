@@ -38,14 +38,14 @@ export default function Header1() {
 
 export function Desktop() {
   return (
-    <ul className="hidden lg:flex lg:items-center gap-5 text-sm p-5 bg-teal-500">
+    <ul className="hidden gap-5 bg-teal-500 p-5 text-sm lg:flex lg:items-center">
       {routes.map((route, index) => {
         const { Icon, href, title } = route;
         return (
           <li key={route.title}>
             <a
               href={href}
-              className="flex items-center gap-1 hover:text-neutral-400 transition-all"
+              className="flex items-center gap-1 transition-all hover:text-neutral-400"
             >
               <Icon />
               {title}
@@ -64,7 +64,7 @@ export function Mobile() {
   useClickAway(ref, () => setOpen(false)); // close menu when clicking outside
 
   return (
-    <div ref={ref} className="lg:hidden bg-teal-500">
+    <div ref={ref} className="bg-teal-500 lg:hidden">
       <Hamburger toggled={isOpen} size={20} toggle={setOpen} />
       <AnimatePresence>
         {isOpen && (
@@ -73,7 +73,7 @@ export function Mobile() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed left-0 shadow-4xl right-0 top-[3rem] p-5 pt-4 bg-slate-400"
+            className="shadow-4xl fixed left-0 right-0 top-[3rem] bg-slate-400 p-5 pt-4"
           >
             <ul className="grid gap-2">
               {routes.map((route, idx) => {
@@ -90,12 +90,12 @@ export function Mobile() {
                       delay: 0.1 + idx / 10,
                     }}
                     key={route.title}
-                    className="w-full p-[0.08rem] rounded-xl bg-teal-500"
+                    className="w-full rounded-xl bg-teal-500 p-[0.08rem]"
                   >
                     <a
                       onClick={() => setOpen((prev) => !prev)}
                       className={
-                        "flex items-center justify-between w-full p-5 rounded-xl text-black"
+                        "flex w-full items-center justify-between rounded-xl p-5 text-black"
                       }
                       href={route.href}
                     >
