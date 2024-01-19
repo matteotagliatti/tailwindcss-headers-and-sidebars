@@ -28,7 +28,7 @@ export default function Sidebar1() {
   const [isOpen, setOpen] = useState(true);
 
   return (
-    <div
+    <aside
       className={`min-h-screen bg-[#0e0e0e] ${
         isOpen ? "w-72" : "w-16"
       } px-4 py-3 text-gray-100 duration-500`}
@@ -43,7 +43,7 @@ export default function Sidebar1() {
           <Menu />
         </button>
       </div>
-      <div className="relative mt-8 flex flex-col gap-y-2">
+      <nav className="relative mt-8 flex flex-col gap-y-2">
         {routes?.map((route, i) => (
           <a
             href={route.href}
@@ -53,7 +53,7 @@ export default function Sidebar1() {
             <div className="flex items-center justify-center p-2">
               <route.icon className="h-5 w-5" />
             </div>
-            <h2
+            <p
               style={{
                 transitionDelay: `${i + 3}00ms`,
               }}
@@ -62,17 +62,17 @@ export default function Sidebar1() {
               }`}
             >
               {route.title}
-            </h2>
-            <h2
+            </p>
+            <p
               className={`${
                 isOpen && "hidden"
               } absolute left-48 w-0 overflow-hidden whitespace-pre rounded-md bg-white px-0 py-0 font-semibold text-gray-900 drop-shadow-lg group-hover:left-14 group-hover:w-fit group-hover:px-2 group-hover:py-1 group-hover:duration-300`}
             >
               {route.title}
-            </h2>
+            </p>
           </a>
         ))}
-      </div>
-    </div>
+      </nav>
+    </aside>
   );
 }
