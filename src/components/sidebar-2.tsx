@@ -1,5 +1,6 @@
 import { Home, Menu } from "lucide-react";
 import { useState } from "react";
+import { SimpleAccordion } from "./accordion-1";
 
 export default function Sidebar2s() {
   const [isOpen, setOpen] = useState(false);
@@ -24,6 +25,7 @@ export default function Sidebar2s() {
           Home
         </span>
       </a>
+      <SimpleAccordion sidebarIsOpen={isOpen} />
     </aside>
   );
 }
